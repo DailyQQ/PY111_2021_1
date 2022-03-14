@@ -13,13 +13,14 @@ def sort(container: List[int]) -> List[int]:
     :return: container sorted in ascending order
     """
 
+    # 4.16912849 секунд для [randint(-10000, 10000) for _ in range(10000)]
     n = len(container)
-
     for i in range(n - 1):
         for j in range(0, n - i - 1):
             if container[j] > container[j + 1]:
                 container[j], container[j + 1] = container[j + 1], container[j]
 
+    # 7.85179351 секунд для [randint(-10000, 10000) for _ in range(10000)]
     # for _ in range(len(container)):
     #     for i in range(len(container) - 1):
     #         if container[i] > container[i + 1]:
@@ -28,6 +29,6 @@ def sort(container: List[int]) -> List[int]:
     return container
 
 
-arr = [randint(-1000, 1000) for _ in range(1000)]
+arr = [randint(-10000, 10000) for _ in range(10000)]
 sort(arr)
 
